@@ -74,10 +74,13 @@ const createCustomer = async () => {
 
 const viewAllCustomers = async () => {
     console.log(`See all customers below:`);
+    console.log(``);
     const customers = await Customer.find({});
-    console.log(`Customers: ${JSON.stringify(customers, null, 2)}`);
 
+    customers.forEach((customer) => {
+        console.log(`id: ${customer.id} -- Name: ${customer.name}, Age: ${customer.age}`);
 
+    });
 
     entryPoint();
 
